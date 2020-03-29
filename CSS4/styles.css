@@ -1,0 +1,70 @@
+/* li:matches(:nth-child(even), .target) {
+  background-color: lightgoldenrodyellow;
+}
+
+li:not(.target) {
+  background-color: lightgrey;
+} */
+/* 
+:root {
+  --awsomeColor: 1px dotted #b8260c;
+} */
+/* :root --> html보다 더 위에 있다. */
+/* 
+li:first-child a {
+  border: var(--awsomeColor);
+} */
+
+/* @custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+:--headers {
+  color: #22a6b3;
+}
+
+@custom-media --ipad-size (max-width: 850px);
+
+@media (--ipad-size) {
+  body {
+    background-color: #ffda79;
+  }
+} 
+*/
+
+/* 
+  color-mod 이기능은 이제 지원하지 않는다 
+  npm i postcss-color-mod-function -D 터미널에 설치해야 한다.
+*/
+
+/* h1 {
+  color: #227093;
+}
+
+h1:hover {
+  color: color-mod(#ffb142 lightness(50%));
+} */
+
+h1 {
+  font-family: system-ui;
+  /* 내컴퓨터에 있는 글자를 사용한다. */
+}
+
+/* nesting rules */
+main {
+  background-color: lightgrey;
+
+  & section {
+    background-color: #34ace0;
+    width: 500px;
+    & li {
+      background-color: lime;
+      width: 400px;
+      & a {
+        color: black;
+        &:hover {
+          color: rgb(218, 162, 60);
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
