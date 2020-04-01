@@ -4,10 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .father {
+        outline: 1px solid gray;
+        /* flex를 주고 싶을때 부모에게 준다. */
+        display: flex;
+        justify-content: space-around;
+        height: 100vh;
+      }
+
+      /*--------------------------------------------------------------------
+        flex-direction:row 일때
+        -> horizontal axis(수평) = main axis
+        -> vertical axis(수직) = cross axis
+
+        * justify-content: left -> 수평선에서 통채로 움직인다.
+                        :center
+                        :right
+                        :space-around
+                        :space-between
+        * align-items :baseline-> 수직선에서 통채로 움직인다
+                        :center
+                        :stretch (높이 값이 없어야 한다.)
+                        :flex-end
+                        :flex-start
+
+        --------------------------------------------------------------------
+
+        flex-direction:column 일때 (반대로 된다.)
+        -> vertical axis(수직) = main axis
+        -> horizontal axis(수평) = cross axis
+
+        * justify-content: left -> 수직선에서 통채로 움직인다.
+                        :center
+                        :right
+                        :space-around
+                        :space-between
+        * align-items :baseline-> 수평선에서 통채로 움직인다
+                        :center
+                        :stretch (넓이 값이 없어야 한다.)
+                        :flex-end
+                        :flex-start
+      --------------------------------------------------------------------*/
+
+      .child {
+        background-color: #e55039;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+      }
+      .child:nth-child(1) {
+        order: 0;
+        align-self: center;
+      }
+      .child:nth-child(2) {
+        order: 3;
+      }
+      .child:nth-child(3) {
+        order: 1;
+      }
+      /*--------------------------------------------------------------------
+        flex-direction:row 일때
+        * align-self: baseline -> 수평선에서 개인적으로
+                        :center
+                        :stretch (높이 값이 없어야 한다.)
+                        :flex-end
+                        :flex-start
+        *order:0 -> 우선순위를 정한다.
+        --------------------------------------------------------------------
+
+        flex-direction:column 일때 (반대로 된다.)
+        * align-self: baseline -> 수직선에서 개인적으로
+                        :center
+                        :stretch (높이 값이 없어야 한다.)
+                        :flex-end
+                        :flex-start
+      --------------------------------------------------------------------*/
+    </style>
   </head>
   <body>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="father">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+    </div>
   </body>
 </html>
