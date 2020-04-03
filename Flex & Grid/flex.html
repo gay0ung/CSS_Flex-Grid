@@ -6,11 +6,12 @@
     <title>Document</title>
     <style>
       .father {
-        outline: 1px solid gray;
         /* flex를 주고 싶을때 부모에게 준다. */
         display: flex;
         justify-content: space-around;
         height: 100vh;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
       }
 
       /*--------------------------------------------------------------------
@@ -29,6 +30,8 @@
                         :flex-end
                         :flex-start
 
+        * align-content ->line을 변경한다.
+
         --------------------------------------------------------------------
 
         flex-direction:column 일때 (반대로 된다.)
@@ -45,6 +48,15 @@
                         :stretch (넓이 값이 없어야 한다.)
                         :flex-end
                         :flex-start
+
+       --------------------------------------------------------------------
+
+        * flex-wrap:nowrap
+                    :wrap --> 정해준 width값을 지켜준다.
+
+        * flex-direction:reverse
+                        :row
+                        :column..
       --------------------------------------------------------------------*/
 
       .child {
@@ -54,17 +66,14 @@
         text-align: center;
         font-size: 40px;
         color: #fff;
-      }
-      .child:nth-child(1) {
-        order: 0;
-        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .child:nth-child(2) {
-        order: 3;
+        background-color: #976058;
       }
-      .child:nth-child(3) {
-        order: 1;
-      }
+
       /*--------------------------------------------------------------------
         flex-direction:row 일때
         * align-self: baseline -> 수평선에서 개인적으로
@@ -81,6 +90,19 @@
                         :stretch (높이 값이 없어야 한다.)
                         :flex-end
                         :flex-start
+
+      ---------------------------------------------------------------------
+        * flex-grow  ->
+                    :
+                    :
+                    :
+                    :
+
+        * flex-shrink ->
+                    :
+                    :
+                    :
+                    :
       --------------------------------------------------------------------*/
     </style>
   </head>
@@ -89,6 +111,9 @@
       <div class="child">1</div>
       <div class="child">2</div>
       <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
     </div>
   </body>
 </html>
