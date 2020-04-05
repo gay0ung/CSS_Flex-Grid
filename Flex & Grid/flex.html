@@ -10,7 +10,7 @@
         display: flex;
         justify-content: space-around;
         height: 100vh;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         /* flex-direction: column; */
       }
 
@@ -61,7 +61,7 @@
 
       .child {
         background-color: #e55039;
-        width: 200px;
+        flex-basis: 200px;
         height: 200px;
         text-align: center;
         font-size: 40px;
@@ -71,7 +71,13 @@
         align-items: center;
       }
       .child:nth-child(2) {
-        background-color: #976058;
+        background-color: #685c5b;
+        /* flex-shrink: 2; */
+        /* flex-grow: 1; */
+      }
+      .child:nth-child(3) {
+        background-color: #47130e;
+        /* flex-grow: 2; */
       }
 
       /*--------------------------------------------------------------------
@@ -82,27 +88,23 @@
                         :flex-end
                         :flex-start
         *order:0 -> 우선순위를 정한다.
-        --------------------------------------------------------------------
 
         flex-direction:column 일때 (반대로 된다.)
-        * align-self: baseline -> 수직선에서 개인적으로
-                        :center
-                        :stretch (높이 값이 없어야 한다.)
-                        :flex-end
-                        :flex-start
 
       ---------------------------------------------------------------------
-        * flex-grow  ->
-                    :
-                    :
-                    :
-                    :
+        * flex-grow : 1 -> 
+        -> 해당숫자만큼 축소된다.
+                    
+        * flex-shrink : 0 ->
+        -> 빈공간만큼 늘어난다.
+      ---------------------------------------------------------------------
+      flex-direction:row일때
+      * flex-basis: (widht가 된다.)
+      -> load될때 처음 setting되는 size이다.
+      -> 정해진 값이 아니다.
 
-        * flex-shrink ->
-                    :
-                    :
-                    :
-                    :
+    flex-direction: column일때
+      * flex-basis: (heigth가 된다.)
       --------------------------------------------------------------------*/
     </style>
   </head>
