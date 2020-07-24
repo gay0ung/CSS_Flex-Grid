@@ -1,0 +1,88 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+  padding: 30px 4% 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-width: 401px;
+}
+
+.responsive-wrap {
+  box-sizing: border-box;
+  height: 100%;
+  display:grid;
+  grid-template-rows: auto 1fr;
+}
+h1 {font-size: 3em; text-align: center; padding: 5px 0 30px 0;}
+
+/* container */
+.container {  
+  background-color: greenyellow;
+  display: grid; 
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows: repeat(2,minmax(300px,1fr));
+  height: 100%;
+}
+.cont {
+  display: grid;
+  grid-template-columns: repeat(2,1fr) ;
+} 
+.cont > .txt {
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  display: grid;
+  align-content: space-between;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  font-size: 1.3em;
+}
+.cont > .txt >  p {padding-top: 20px; line-height: 1.4em;}
+.cont > .txt >  span {
+    font-size: 0.6em;
+}
+.cont:nth-child(1) > .txt {background-color:#4f8b95 ;}
+.cont:nth-child(2) > .txt {background-color: #d5c72c;}
+.cont:nth-child(3) > .txt:nth-child(1) {background-color: #77b6b1;}
+.cont:nth-child(3) > .txt:nth-child(2) {background-color:#dee1e3 ;}
+.cont:nth-child(4) > .txt:nth-child(1) {background-color: #cacaca;}
+.cont:nth-child(4) > .txt:nth-child(2) {background-color:#f3ff8b ; color: #b92121;}
+.cont:nth-child(5) > .txt:nth-child(2) {background-color:#aaa128 ;}
+.cont:nth-child(6) > .txt:nth-child(2) {background-color:#b92121 ;}
+
+.cont > .bgi {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cont:nth-child(1) > .bgi {
+  background-image: url('./images/_\ dakota\ gordon.jpg');
+}
+.cont:nth-child(2) > .bgi {background-image: url('./images/Spring\ Equinox\ —\ a\ map\ of\ dreams.jpg');}
+.cont:nth-child(5) > .bgi {background-image: url('./images/sun\ kissed\ orange.jpg');}
+.cont:nth-child(6) > .bgi {background-image: url('./images/Fashion_\ Ladies\ and\ Their\ Lizards.jpg');}
+
+@media screen and (max-width:1182px){
+  .container {
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows: repeat(3,minmax(200px,1fr));
+  }
+  h1{
+    font-size: 2.5em;
+  }
+
+}
+@media screen and (max-width:682px){
+  h1{
+    font-size: 1.8em;
+  }
+  .container {
+      grid-template-columns:repeat(1,1fr);
+        grid-template-rows: repeat(6,1fr);
+  }
+    .cont > .txt {
+    font-size: 1em;
+  }
+}
