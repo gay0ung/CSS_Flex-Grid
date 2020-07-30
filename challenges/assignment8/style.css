@@ -1,0 +1,98 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* common */
+.art-gallery-wrap{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+
+}
+
+.nav > li,
+.pictures {
+  box-sizing: border-box;
+  border-top: 3px solid rgba(0, 0, 0, 0.342);;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.342);;
+  margin: 0;
+}
+.nav > li+li {
+  border-left: 3px solid rgba(0, 0, 0, 0.342);
+}
+/* header ------------------------------------------- */
+.nav  {
+  display: grid;
+  grid-template: 1fr /repeat(5,1fr);
+  height: 100%;
+}
+
+.nav > li,footer {
+  display: grid;
+  align-content: center;
+  padding: 0 15px;
+  position: relative;
+}
+.nav > li::before{
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0px;height: 0px;
+  border-top:12px solid #6d6c5a;
+  border-bottom:10px solid none;
+  border-right: 8px solid transparent;
+  border-left: 8px solid  transparent;
+}
+/* main -------------------------------------------------*/
+main {
+  width: calc(100% + 10px);
+  height: 100%;
+  overflow-y: scroll;
+}
+.pictures-wrap {
+  height: 200%;
+  display: grid;
+  grid-template: repeat(4,1fr)/ repeat(3,1fr);
+  
+}
+.picture {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 35px 1fr 35px;
+}
+.picture:first-child,.picture + .picture {
+  border-right: 3px solid rgba(0, 0, 0, 0.137);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.137);
+}
+.picture:nth-child(3n){border-right: 0;}
+
+.picture > li {
+  width: 100%;
+}
+/* l-picture */
+.l-picture {
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+
+}
+.l-picture > img {
+  height: 100%;
+}
+
+/* l-header & l-footer */
+.l-header ,
+.l-footer {
+  display: grid;
+  grid-template: 1fr/ repeat(2,30%);
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.themes,.more-txt{text-align: right;}
+/* min-width:396px */
+
+/* footer -------------------------------------- */
+footer {background-color: rgba(85, 98, 84, 0.219); text-align: right;}
+
+
